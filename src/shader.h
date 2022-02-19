@@ -1,3 +1,5 @@
+// source: https://learnopengl.com/code_viewer_gh.php?code=includes/learnopengl/shader.h
+
 #ifndef SHADER_H
 #define SHADER_H
 
@@ -101,6 +103,12 @@ public:
     void use()
     {
         glUseProgram(ID);
+    }
+    // delete the shader
+    // ------------------------------------------------------------------------
+    void del()
+    {
+        glDeleteProgram(ID);
     }
     // utility uniform functions
     // ------------------------------------------------------------------------
