@@ -8,6 +8,8 @@
 // Include standard headers
 #include <stdio.h>
 #include <stdlib.h>
+#include <vector>
+using namespace std;
 
 // Include GLEW
 #include <GL/glew.h>
@@ -23,6 +25,7 @@ using namespace glm;
 // Include Shader and Object Loader
 #include "src/shader.h"
 #include "src/objloader.h"
+using namespace lOBJ;
 
 // GLFWwindow helper function declarations
 void framebuffer_size_callback(GLFWwindow* window, int width, int height);
@@ -90,32 +93,30 @@ int main(void)
 	// load vertex data from OBJ file
 	// ------------------------------------------------------------------
 	// set up variables to receive mesh data
-	// // std::vector< glm::vec3 > vertices;
-	// std::vector< glm::vec3 > verts;
-	// std::vector< glm::vec2 > uvs; // won't be used at the moment either?
-	// std::vector< glm::vec3 > normals; // Won't be used at the moment.
+	vector< float > vertices;
+	vector< vec2 > uvs; // Won't be used at the moment either?
+	vector< vec3 > normals; // Won't be used at the moment.
 	// Read our .obj file
-	// // bool res = lOBJ::loadOBJ(pathOBJ, vertices, uvs, normals);
-	// bool res = lOBJ::loadOBJ(pathOBJ, verts, uvs, normals);
-	lOBJ::loadOBJ();
+	bool res = loadOBJ(pathOBJ, vertices, uvs, normals);
+	unsigned int numVertices = vertices.size() / 6;
 	// 
 	// TEMP: (until loadOBJ is written properly)
 	// set up vertex data (and buffer(s)) and configure vertex attributes
 	// ------------------------------------------------------------------
-	float vertices[] = {
-		// positions					//colors
+	//float vertices[] = {
+	//	// positions					//colors
 
-		// triangle 1
-	 -0.5f, -0.5f, 0.0f, 		1.0f, 0.0f, 0.0f, // left  
-		0.5f, -0.5f, 0.0f, 		0.5f, 0.5f, 0.0f,  // right 
-		0.0f,  0.5f, 0.0f, 		0.0f, 1.0f, 0.0f,  // top   
+	//	// triangle 1
+	//   -0.5f, -0.5f, 0.0f, 		1.0f, 0.0f, 0.0f, // left  
+	//	0.5f, -0.5f, 0.0f, 		0.5f, 0.5f, 0.0f,  // right 
+	//	0.0f,  0.5f, 0.0f, 		0.0f, 1.0f, 0.0f,  // top   
 
-		// triangle 2
-	 -0.5f, -0.5f, 0.0f, 		0.0f, 0.5f, 0.5f,  // left  
-		0.5f, -0.5f, 0.0f, 		0.0f, 0.0f, 1.0f,  // right 
-		0.0f, -1.0f, 0.0f, 		0.5f, 0.0f, 0.5f,   // bottom
-	};
-	unsigned int numVertices = sizeof(vertices) / 3;
+	//	// triangle 2
+	//   -0.5f, -0.5f, 0.0f, 		0.0f, 0.5f, 0.5f,  // left  
+	//	0.5f, -0.5f, 0.0f, 		0.0f, 0.0f, 1.0f,  // right 
+	//	0.0f, -1.0f, 0.0f, 		0.5f, 0.0f, 0.5f   // bottom
+	//};
+	//unsigned int numVertices = sizeof(vertices) / 6;
 	// 
 	unsigned int VBO, VAO;
 	glGenVertexArrays(1, &VAO);
@@ -124,7 +125,8 @@ int main(void)
 	glBindVertexArray(VAO);
 	// 
 	glBindBuffer(GL_ARRAY_BUFFER, VBO);
-	glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
+	glBufferData(GL_ARRAY_BUFFER, sizeof(vertices) * sizeof(float), &vertices[0], GL_STATIC_DRAW);
+	//glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), &vertices[0], GL_STATIC_DRAW);
 	// set up vertex attribute pointers
 	// position attribute
 	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(float), (void*)0);
@@ -141,7 +143,9 @@ int main(void)
 	glBindVertexArray(0);
 	// 
 	// uncomment this call to draw in wireframe polygons.
-	// glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
+	//glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
+	// uncomment this call for two-sided rendering
+	glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
 
 
 

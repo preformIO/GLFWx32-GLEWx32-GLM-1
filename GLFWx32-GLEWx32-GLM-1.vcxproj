@@ -146,8 +146,265 @@
     <ClCompile Include="src\objloader.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="resource.h" />
+    <ClInclude Include="resource1.h" />
     <ClInclude Include="src\objloader.h" />
     <ClInclude Include="src\shader.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="GLFWx32-GLEWx32-GLM-1.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <CopyFileToFolders Include="data\shaderFrag.glsl">
+      <FileType>Text</FileType>
+      <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">True</DeploymentContent>
+      <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(OutDir)data\</DestinationFolders>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="data\shaderVec.glsl">
+      <DeploymentContent>false</DeploymentContent>
+      <FileType>Text</FileType>
+      <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</DeploymentContent>
+      <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(OutDir)data\</DestinationFolders>
+    </CopyFileToFolders>
+  </ItemGroup>
+  <ItemGroup>
+    <CopyFileToFolders Include="data\objs\al.mtl">
+      <DeploymentContent>true</DeploymentContent>
+      <FileType>Text</FileType>
+      <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(OutDir)data\objs\</DestinationFolders>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="data\objs\castle.mtl">
+      <DeploymentContent>true</DeploymentContent>
+      <FileType>Text</FileType>
+      <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(OutDir)data\objs\</DestinationFolders>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="data\objs\couch.mtl">
+      <DeploymentContent>true</DeploymentContent>
+      <FileType>Text</FileType>
+      <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(OutDir)data\objs\</DestinationFolders>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="data\objs\cube.mtl">
+      <DeploymentContent>true</DeploymentContent>
+      <FileType>Text</FileType>
+      <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(OutDir)data\objs\</DestinationFolders>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="data\objs\dolphins.mtl">
+      <DeploymentContent>true</DeploymentContent>
+      <FileType>Text</FileType>
+      <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(OutDir)data\objs\</DestinationFolders>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="data\objs\f-16.mtl">
+      <DeploymentContent>true</DeploymentContent>
+      <FileType>Text</FileType>
+      <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(OutDir)data\objs\</DestinationFolders>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="data\objs\flowers.mtl">
+      <DeploymentContent>true</DeploymentContent>
+      <FileType>Text</FileType>
+      <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(OutDir)data\objs\</DestinationFolders>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="data\objs\head.mtl">
+      <DeploymentContent>true</DeploymentContent>
+      <FileType>Text</FileType>
+      <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(OutDir)data\objs\</DestinationFolders>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="data\objs\obj_data.tar">
+      <DeploymentContent>true</DeploymentContent>
+      <FileType>Text</FileType>
+      <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(OutDir)data\objs\</DestinationFolders>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="data\objs\obj_data.tgz">
+      <DeploymentContent>true</DeploymentContent>
+      <FileType>Text</FileType>
+      <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(OutDir)data\objs\</DestinationFolders>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="data\objs\paisley.rgb">
+      <DeploymentContent>true</DeploymentContent>
+      <FileType>Text</FileType>
+      <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(OutDir)data\objs\</DestinationFolders>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="data\objs\pawn.mtl">
+      <DeploymentContent>true</DeploymentContent>
+      <FileType>Text</FileType>
+      <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(OutDir)data\objs\</DestinationFolders>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="data\objs\pig.mtl">
+      <DeploymentContent>true</DeploymentContent>
+      <FileType>Text</FileType>
+      <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(OutDir)data\objs\</DestinationFolders>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="data\objs\porsche.mtl">
+      <DeploymentContent>true</DeploymentContent>
+      <FileType>Text</FileType>
+      <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(OutDir)data\objs\</DestinationFolders>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="data\objs\rose+vase.mtl">
+      <DeploymentContent>true</DeploymentContent>
+      <FileType>Text</FileType>
+      <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(OutDir)data\objs\</DestinationFolders>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="data\objs\soccerball.mtl">
+      <DeploymentContent>true</DeploymentContent>
+      <FileType>Text</FileType>
+      <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(OutDir)data\objs\</DestinationFolders>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="data\objs\teapot.mtl">
+      <DeploymentContent>true</DeploymentContent>
+      <FileType>Text</FileType>
+      <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(OutDir)data\objs\</DestinationFolders>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="data\objs\venus.mtl">
+      <DeploymentContent>true</DeploymentContent>
+      <FileType>Text</FileType>
+      <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(OutDir)data\objs\</DestinationFolders>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="data\objs\world_curved.mtl">
+      <DeploymentContent>true</DeploymentContent>
+      <FileType>Text</FileType>
+      <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(OutDir)data\objs\</DestinationFolders>
+    </CopyFileToFolders>
+  </ItemGroup>
+  <ItemGroup>
+    <CopyFileToFolders Include="data\objs\al.obj">
+      <DeploymentContent>true</DeploymentContent>
+      <FileType>Text</FileType>
+      <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(OutDir)data\objs\</DestinationFolders>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="data\objs\apocalypse.obj">
+      <DeploymentContent>true</DeploymentContent>
+      <FileType>Text</FileType>
+      <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(OutDir)data\objs\</DestinationFolders>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="data\objs\castle.obj">
+      <DeploymentContent>true</DeploymentContent>
+      <FileType>Text</FileType>
+      <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(OutDir)data\objs\</DestinationFolders>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="data\objs\couch.obj">
+      <DeploymentContent>true</DeploymentContent>
+      <FileType>Text</FileType>
+      <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(OutDir)data\objs\</DestinationFolders>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="data\objs\cow.obj">
+      <DeploymentContent>true</DeploymentContent>
+      <FileType>Text</FileType>
+      <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(OutDir)data\objs\</DestinationFolders>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="data\objs\cube.obj">
+      <DeploymentContent>true</DeploymentContent>
+      <FileType>Text</FileType>
+      <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(OutDir)data\objs\</DestinationFolders>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="data\objs\cube_tris.obj">
+      <DeploymentContent>true</DeploymentContent>
+      <FileType>Text</FileType>
+      <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(OutDir)data\objs\</DestinationFolders>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="data\objs\cutcube.obj">
+      <DeploymentContent>true</DeploymentContent>
+      <FileType>Text</FileType>
+      <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(OutDir)data\objs\</DestinationFolders>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="data\objs\dolphins.obj">
+      <DeploymentContent>true</DeploymentContent>
+      <FileType>Text</FileType>
+      <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(OutDir)data\objs\</DestinationFolders>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="data\objs\dragon.obj">
+      <DeploymentContent>true</DeploymentContent>
+      <FileType>Text</FileType>
+      <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(OutDir)data\objs\</DestinationFolders>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="data\objs\eagle.obj">
+      <DeploymentContent>true</DeploymentContent>
+      <FileType>Text</FileType>
+      <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(OutDir)data\objs\</DestinationFolders>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="data\objs\f-16.obj">
+      <DeploymentContent>true</DeploymentContent>
+      <FileType>Text</FileType>
+      <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(OutDir)data\objs\</DestinationFolders>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="data\objs\flowers.obj">
+      <DeploymentContent>true</DeploymentContent>
+      <FileType>Text</FileType>
+      <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(OutDir)data\objs\</DestinationFolders>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="data\objs\galleon.obj">
+      <DeploymentContent>true</DeploymentContent>
+      <FileType>Text</FileType>
+      <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(OutDir)data\objs\</DestinationFolders>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="data\objs\head.obj">
+      <DeploymentContent>true</DeploymentContent>
+      <FileType>Text</FileType>
+      <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(OutDir)data\objs\</DestinationFolders>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="data\objs\head_chord.obj">
+      <DeploymentContent>true</DeploymentContent>
+      <FileType>Text</FileType>
+      <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(OutDir)data\objs\</DestinationFolders>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="data\objs\ncc1701b.obj">
+      <DeploymentContent>true</DeploymentContent>
+      <FileType>Text</FileType>
+      <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(OutDir)data\objs\</DestinationFolders>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="data\objs\pawn.obj">
+      <DeploymentContent>true</DeploymentContent>
+      <FileType>Text</FileType>
+      <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(OutDir)data\objs\</DestinationFolders>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="data\objs\pig.obj">
+      <DeploymentContent>true</DeploymentContent>
+      <FileType>Text</FileType>
+      <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(OutDir)data\objs\</DestinationFolders>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="data\objs\porsche.obj">
+      <DeploymentContent>true</DeploymentContent>
+      <FileType>Text</FileType>
+      <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(OutDir)data\objs\</DestinationFolders>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="data\objs\rose+vase.obj">
+      <DeploymentContent>true</DeploymentContent>
+      <FileType>Text</FileType>
+      <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(OutDir)data\objs\</DestinationFolders>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="data\objs\shark.obj">
+      <DeploymentContent>true</DeploymentContent>
+      <FileType>Text</FileType>
+      <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(OutDir)data\objs\</DestinationFolders>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="data\objs\slices.obj">
+      <DeploymentContent>true</DeploymentContent>
+      <FileType>Text</FileType>
+      <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(OutDir)data\objs\</DestinationFolders>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="data\objs\soccerball.obj">
+      <DeploymentContent>true</DeploymentContent>
+      <FileType>Text</FileType>
+      <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(OutDir)data\objs\</DestinationFolders>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="data\objs\teapot.obj">
+      <DeploymentContent>true</DeploymentContent>
+      <FileType>Text</FileType>
+      <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(OutDir)data\objs\</DestinationFolders>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="data\objs\venus.obj">
+      <DeploymentContent>true</DeploymentContent>
+      <FileType>Text</FileType>
+      <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(OutDir)data\objs\</DestinationFolders>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="data\objs\womanhead.obj">
+      <DeploymentContent>true</DeploymentContent>
+      <FileType>Text</FileType>
+      <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(OutDir)data\objs\</DestinationFolders>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="data\objs\world_curved.obj">
+      <DeploymentContent>true</DeploymentContent>
+      <FileType>Text</FileType>
+      <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(OutDir)data\objs\</DestinationFolders>
+    </CopyFileToFolders>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

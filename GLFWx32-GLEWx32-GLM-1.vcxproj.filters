@@ -16,6 +16,12 @@
     <Filter Include="Source Files\src">
       <UniqueIdentifier>{23a37738-815c-45de-a0ad-f8940a372c18}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\data">
+      <UniqueIdentifier>{dd3b454c-4a5a-444c-a5c3-b2f56283df5c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\data\objs">
+      <UniqueIdentifier>{ffe10e6d-57cd-42b3-a0eb-9abcafb3831b}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -32,5 +38,165 @@
     <ClInclude Include="src\objloader.h">
       <Filter>Source Files\src</Filter>
     </ClInclude>
+    <ClInclude Include="resource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="resource1.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="GLFWx32-GLEWx32-GLM-1.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <CopyFileToFolders Include="data\shaderVec.glsl">
+      <Filter>Source Files\data</Filter>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="data\shaderFrag.glsl">
+      <Filter>Source Files\data</Filter>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="data\objs\world_curved.obj">
+      <Filter>Source Files\data\objs</Filter>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="data\objs\al.mtl">
+      <Filter>Source Files\data\objs</Filter>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="data\objs\al.obj">
+      <Filter>Source Files\data\objs</Filter>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="data\objs\apocalypse.obj">
+      <Filter>Source Files\data\objs</Filter>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="data\objs\castle.mtl">
+      <Filter>Source Files\data\objs</Filter>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="data\objs\castle.obj">
+      <Filter>Source Files\data\objs</Filter>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="data\objs\couch.mtl">
+      <Filter>Source Files\data\objs</Filter>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="data\objs\couch.obj">
+      <Filter>Source Files\data\objs</Filter>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="data\objs\cow.obj">
+      <Filter>Source Files\data\objs</Filter>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="data\objs\cube.mtl">
+      <Filter>Source Files\data\objs</Filter>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="data\objs\cube.obj">
+      <Filter>Source Files\data\objs</Filter>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="data\objs\cube_tris.obj">
+      <Filter>Source Files\data\objs</Filter>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="data\objs\cutcube.obj">
+      <Filter>Source Files\data\objs</Filter>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="data\objs\dolphins.mtl">
+      <Filter>Source Files\data\objs</Filter>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="data\objs\dolphins.obj">
+      <Filter>Source Files\data\objs</Filter>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="data\objs\dragon.obj">
+      <Filter>Source Files\data\objs</Filter>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="data\objs\eagle.obj">
+      <Filter>Source Files\data\objs</Filter>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="data\objs\f-16.mtl">
+      <Filter>Source Files\data\objs</Filter>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="data\objs\f-16.obj">
+      <Filter>Source Files\data\objs</Filter>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="data\objs\flowers.mtl">
+      <Filter>Source Files\data\objs</Filter>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="data\objs\flowers.obj">
+      <Filter>Source Files\data\objs</Filter>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="data\objs\galleon.obj">
+      <Filter>Source Files\data\objs</Filter>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="data\objs\head.mtl">
+      <Filter>Source Files\data\objs</Filter>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="data\objs\head.obj">
+      <Filter>Source Files\data\objs</Filter>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="data\objs\head_chord.obj">
+      <Filter>Source Files\data\objs</Filter>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="data\objs\ncc1701b.obj">
+      <Filter>Source Files\data\objs</Filter>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="data\objs\obj_data.tar">
+      <Filter>Source Files\data\objs</Filter>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="data\objs\obj_data.tgz">
+      <Filter>Source Files\data\objs</Filter>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="data\objs\paisley.rgb">
+      <Filter>Source Files\data\objs</Filter>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="data\objs\pawn.mtl">
+      <Filter>Source Files\data\objs</Filter>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="data\objs\pawn.obj">
+      <Filter>Source Files\data\objs</Filter>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="data\objs\pig.mtl">
+      <Filter>Source Files\data\objs</Filter>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="data\objs\pig.obj">
+      <Filter>Source Files\data\objs</Filter>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="data\objs\porsche.mtl">
+      <Filter>Source Files\data\objs</Filter>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="data\objs\porsche.obj">
+      <Filter>Source Files\data\objs</Filter>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="data\objs\rose+vase.mtl">
+      <Filter>Source Files\data\objs</Filter>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="data\objs\rose+vase.obj">
+      <Filter>Source Files\data\objs</Filter>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="data\objs\shark.obj">
+      <Filter>Source Files\data\objs</Filter>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="data\objs\slices.obj">
+      <Filter>Source Files\data\objs</Filter>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="data\objs\soccerball.mtl">
+      <Filter>Source Files\data\objs</Filter>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="data\objs\soccerball.obj">
+      <Filter>Source Files\data\objs</Filter>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="data\objs\teapot.mtl">
+      <Filter>Source Files\data\objs</Filter>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="data\objs\teapot.obj">
+      <Filter>Source Files\data\objs</Filter>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="data\objs\venus.mtl">
+      <Filter>Source Files\data\objs</Filter>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="data\objs\venus.obj">
+      <Filter>Source Files\data\objs</Filter>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="data\objs\womanhead.obj">
+      <Filter>Source Files\data\objs</Filter>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="data\objs\world_curved.mtl">
+      <Filter>Source Files\data\objs</Filter>
+    </CopyFileToFolders>
   </ItemGroup>
 </Project>
