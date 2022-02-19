@@ -171,6 +171,9 @@ int main(void)
 		mat4 model = mat4(1.0f); // make sure to initialize matrix to identity matrix first
 		mat4 view = mat4(1.0f);
 		mat4 projection = mat4(1.0f);
+		// manipulate transformations
+		float seconds= glfwGetTime();
+		model = rotate(model, radians(30.0f * seconds), vec3(0.0f, 1.0f, 0.0f));
 		view = translate(view, vec3(0.0f, 0.0f, -3.0f));
 		view = rotate(view, radians(30.0f), vec3(1.0f, 0.0f, 0.0f));
 		view = rotate(view, radians(45.0f), vec3(0.0f, 1.0f, 0.0f));
