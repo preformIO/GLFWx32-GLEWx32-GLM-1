@@ -51,10 +51,10 @@
     </ResourceCompile>
   </ItemGroup>
   <ItemGroup>
-    <CopyFileToFolders Include="data\shaderVec.glsl">
+    <CopyFileToFolders Include="data\shaderVec.hlsl">
       <Filter>Source Files\data</Filter>
     </CopyFileToFolders>
-    <CopyFileToFolders Include="data\shaderFrag.glsl">
+    <CopyFileToFolders Include="data\shaderFrag.hlsl">
       <Filter>Source Files\data</Filter>
     </CopyFileToFolders>
     <CopyFileToFolders Include="data\objs\world_curved.obj">

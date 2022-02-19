@@ -20,6 +20,8 @@ GLFWwindow* window;
 
 // Include GLM
 #include <glm/glm.hpp>
+#include <glm/gtc/matrix_transform.hpp>
+#include <glm/gtc/type_ptr.hpp>
 using namespace glm;
 
 // Include Shader and Object Loader
@@ -33,11 +35,11 @@ void processInput(GLFWwindow* window);
 
 // settings
 // --------------------------------
-const unsigned int SCR_WIDTH = 800;
-const unsigned int SCR_HEIGHT = 600;
+unsigned int SCR_WIDTH = 800;
+unsigned int SCR_HEIGHT = 600;
 // shader paths
-const char* pathVShader = "data/shaderVec.glsl"; // ? relative to final application location?
-const char* pathFShader = "data/shaderFrag.glsl"; // ? relative to final application location?
+const char* pathVShader = "data/shaderVec.hlsl"; // ? relative to final application location?
+const char* pathFShader = "data/shaderFrag.hlsl"; // ? relative to final application location?
 // obj file path
 const char* pathOBJ = "data/objs/cube_tris.obj"; // ? relative to final application location?
 
@@ -90,8 +92,10 @@ int main(void)
 
 
 
-	// load vertex data from OBJ file
+	// set up vertex data (and buffer(s)) and configure vertex attributes
 	// ------------------------------------------------------------------
+	// load vertex data from OBJ file
+	// --
 	// set up variables to receive mesh data
 	vector< float > vertices;
 	vector< vec2 > uvs; // Won't be used at the moment either?
@@ -99,25 +103,8 @@ int main(void)
 	// Read our .obj file
 	bool res = loadOBJ(pathOBJ, vertices, uvs, normals);
 	unsigned int numVertices = vertices.size() / 6;
-	// 
-	// TEMP: (until loadOBJ is written properly)
-	// set up vertex data (and buffer(s)) and configure vertex attributes
-	// ------------------------------------------------------------------
-	//float vertices[] = {
-	//	// positions					//colors
-
-	//	// triangle 1
-	//   -0.5f, -0.5f, 0.0f, 		1.0f, 0.0f, 0.0f, // left  
-	//	0.5f, -0.5f, 0.0f, 		0.5f, 0.5f, 0.0f,  // right 
-	//	0.0f,  0.5f, 0.0f, 		0.0f, 1.0f, 0.0f,  // top   
-
-	//	// triangle 2
-	//   -0.5f, -0.5f, 0.0f, 		0.0f, 0.5f, 0.5f,  // left  
-	//	0.5f, -0.5f, 0.0f, 		0.0f, 0.0f, 1.0f,  // right 
-	//	0.0f, -1.0f, 0.0f, 		0.5f, 0.0f, 0.5f   // bottom
-	//};
-	//unsigned int numVertices = sizeof(vertices) / 6;
-	// 
+	//
+	// vertex buffer(s) vertex attributes
 	unsigned int VBO, VAO;
 	glGenVertexArrays(1, &VAO);
 	glGenBuffers(1, &VBO);
@@ -125,7 +112,7 @@ int main(void)
 	glBindVertexArray(VAO);
 	// 
 	glBindBuffer(GL_ARRAY_BUFFER, VBO);
-	glBufferData(GL_ARRAY_BUFFER, sizeof(vertices) * sizeof(float), &vertices[0], GL_STATIC_DRAW);
+	glBufferData(GL_ARRAY_BUFFER, vertices.size() * sizeof(float), &vertices[0], GL_STATIC_DRAW);
 	//glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), &vertices[0], GL_STATIC_DRAW);
 	// set up vertex attribute pointers
 	// position attribute
@@ -141,12 +128,16 @@ int main(void)
 	// You can unbind the VAO afterwards so other VAO calls won't accidentally modify this VAO, but this rarely happens. Modifying other
 	// VAOs requires a call to glBindVertexArray anyways so we generally don't unbind VAOs (nor VBOs) when it's not directly necessary.
 	glBindVertexArray(0);
-	// 
+	
+	// Render settings
 	// uncomment this call to draw in wireframe polygons.
-	//glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
-	// uncomment this call for two-sided rendering
-	glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
-
+	glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
+	// uncomment this call for front-face rendering
+	//glPolygonMode(GL_FRONT, GL_FILL);
+	// uncomment this call for inverted normals rendering
+	//glPolygonMode(GL_BACK, GL_FILL);
+	// enable depth testing so fragments render at proper depth
+	glEnable(GL_DEPTH_TEST);
 
 
 	// Ensure we can capture the escape key being pressed below
@@ -164,11 +155,27 @@ int main(void)
 		// render
 		// ------
 		glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
-		glClear(GL_COLOR_BUFFER_BIT);
+		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
 		// select shader to use
 		ourShader.use();
 		// ourShader.setFloat("someUniform", 1.0f);
+
+
+		// create transformations
+		mat4 model = mat4(1.0f); // make sure to initialize matrix to identity matrix first
+		mat4 view = mat4(1.0f);
+		mat4 projection = mat4(1.0f);
+		view = translate(view, vec3(0.0f, 0.0f, -3.0f));
+		view = rotate(view, radians(30.0f), vec3(1.0f, 0.0f, 0.0f));
+		view = rotate(view, radians(45.0f), vec3(0.0f, 1.0f, 0.0f));
+		projection = perspective(radians(45.0f), (float)SCR_WIDTH / (float)SCR_HEIGHT, 0.1f, 100.0f);
+		// pass tranformations to appropriate shader uniforms
+		ourShader.setMat4("model", model);
+		ourShader.setMat4("view", view);
+		// note: currently we set the projection matrix each frame, but since the projection matrix rarely changes it's often best practice to set it outside the main loop only once.
+		ourShader.setMat4("projection", projection);
+
 
 		// draw our triangles
 		glBindVertexArray(VAO); // seeing as we only have a single VAO there's no need to bind it every time, but we'll do so to keep things a bit more organized
@@ -208,4 +215,6 @@ void framebuffer_size_callback(GLFWwindow* window, int width, int height)
 	// make sure the viewport matches the new window dimensions; note that width and
 	// height will be significantly larger than specified on retina displays.
 	glViewport(0, 0, width, height);
+	SCR_WIDTH = width;
+	SCR_HEIGHT = height;
 }

@@ -155,12 +155,12 @@
     <ResourceCompile Include="GLFWx32-GLEWx32-GLM-1.rc" />
   </ItemGroup>
   <ItemGroup>
-    <CopyFileToFolders Include="data\shaderFrag.glsl">
+    <CopyFileToFolders Include="data\shaderFrag.hlsl">
       <FileType>Text</FileType>
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">True</DeploymentContent>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(OutDir)data\</DestinationFolders>
     </CopyFileToFolders>
-    <CopyFileToFolders Include="data\shaderVec.glsl">
+    <CopyFileToFolders Include="data\shaderVec.hlsl">
       <DeploymentContent>false</DeploymentContent>
       <FileType>Text</FileType>
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</DeploymentContent>
