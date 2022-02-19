@@ -1,9 +1,10 @@
 // Author: david aloka <d@preform.io>
 // History:
-//      - project setup: https://www.wikihow.com/Set-Up-OpenGL-GLFW-GLEW-GLM-on-a-Project-with-Visual-Studio
-// 		- initial source code: https://github.com/opengl-tutorials/ogl/blob/master/tutorial01_first_window/tutorial01.cpp
-//		- additional source code: https://github.com/vkphillia/opengl-cpp-template
-// 		- integrated "helloTriangle.cpp" from https://www.dropbox.com/s/ldzgp57ph9btzxf/helloTriangle.cpp?dl=0
+//      - project setup https://www.wikihow.com/Set-Up-OpenGL-GLFW-GLEW-GLM-on-a-Project-with-Visual-Studio
+// 		- initial source code https://github.com/opengl-tutorials/ogl/blob/master/tutorial01_first_window/tutorial01.cpp
+//		- additional source code https://github.com/vkphillia/opengl-cpp-template
+// 		- integrated "helloTriangle.cpp" https://www.dropbox.com/s/ldzgp57ph9btzxf/helloTriangle.cpp?dl=0
+//		- perspective projection camera https://learnopengl.com/Getting-started/Coordinate-Systems
 
 // Include standard headers
 #include <stdio.h>
