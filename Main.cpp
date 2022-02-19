@@ -7,8 +7,8 @@
 //		- perspective projection camera https://learnopengl.com/Getting-started/Coordinate-Systems
 
 // Include standard headers
-#include <stdio.h>
 #include <stdlib.h>
+#include <stdio.h>
 #include <vector>
 using namespace std;
 
@@ -30,12 +30,17 @@ using namespace glm;
 #include "src/objloader.h"
 using namespace lOBJ;
 
+
+
 // GLFWwindow helper function declarations
 void framebuffer_size_callback(GLFWwindow* window, int width, int height);
 void processInput(GLFWwindow* window);
 
+
+
 // settings
 // --------------------------------
+// screen
 unsigned int SCR_WIDTH = 800;
 unsigned int SCR_HEIGHT = 600;
 // shader paths
@@ -143,7 +148,6 @@ int main(void)
 
 	// Ensure we can capture the escape key being pressed below
 	glfwSetInputMode(window, GLFW_STICKY_KEYS, GL_TRUE);
-
 
 	// render loop
 	// -----------
