@@ -51,7 +51,7 @@
     </ResourceCompile>
   </ItemGroup>
   <ItemGroup>
-    <CopyFileToFolders Include="data\shaderVec.hlsl">
+    <CopyFileToFolders Include="data\shaderVert.hlsl">
       <Filter>Source Files\data</Filter>
     </CopyFileToFolders>
     <CopyFileToFolders Include="data\shaderFrag.hlsl">

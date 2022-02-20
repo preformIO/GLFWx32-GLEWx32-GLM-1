@@ -160,7 +160,7 @@
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">True</DeploymentContent>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(OutDir)data\</DestinationFolders>
     </CopyFileToFolders>
-    <CopyFileToFolders Include="data\shaderVec.hlsl">
+    <CopyFileToFolders Include="data\shaderVert.hlsl">
       <DeploymentContent>false</DeploymentContent>
       <FileType>Text</FileType>
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</DeploymentContent>

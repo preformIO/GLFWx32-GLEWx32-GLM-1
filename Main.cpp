@@ -44,7 +44,7 @@ void processInput(GLFWwindow* window);
 unsigned int SCR_WIDTH = 800;
 unsigned int SCR_HEIGHT = 600;
 // shader paths
-const char* pathVShader = "data/shaderVec.hlsl"; // ? relative to final application location?
+const char* pathVShader = "data/shaderVert.hlsl"; // ? relative to final application location?
 const char* pathFShader = "data/shaderFrag.hlsl"; // ? relative to final application location?
 // obj file path
 const char* pathOBJ = "data/objs/cube_tris.obj"; // ? relative to final application location?
@@ -164,7 +164,6 @@ int main(void)
 
 		// select shader to use
 		ourShader.use();
-		// ourShader.setFloat("someUniform", 1.0f);
 
 
 		// create transformations
