@@ -107,8 +107,29 @@ int main(void)
 	vector< vec2 > uvs; // Won't be used at the moment either?
 	vector< vec3 > normals; // Won't be used at the moment.
 	// Read our .obj file
-	bool res = loadOBJ(pathOBJ, vertices, uvs, normals);
+	bool objLoaded = loadOBJ(pathOBJ, vertices, uvs, normals);
 	unsigned int numVertices = vertices.size() / 6;
+	// If obj data was not loaded, we'll use this debug vertex data
+	// ------------------------------------------------------------------
+	// uncomment line below to test debug vertices
+	//objLoaded = false;
+	float verticesDebug[] = {
+		// positions				//colors
+
+		// triangle 1
+		-0.5f, -0.5f, 0.0f, 		1.0f, 0.0f, 0.0f, // left  
+		 0.5f, -0.5f, 0.0f, 		0.5f, 0.5f, 0.0f,  // right 
+		 0.0f,  0.5f, 0.0f, 		0.0f, 1.0f, 0.0f,  // top   
+
+		// triangle 2
+		-0.5f, -0.5f, 0.0f, 		0.0f, 0.5f, 0.5f,  // left  
+		 0.5f, -0.5f, 0.0f, 		0.0f, 0.0f, 1.0f,  // right 
+		 0.0f, -1.0f, 0.0f, 		0.5f, 0.0f, 0.5f,   // bottom
+	};
+	if (!objLoaded)
+	{
+		numVertices = sizeof(verticesDebug) / 6;
+	}
 	//
 	// vertex buffer(s) vertex attributes
 	unsigned int VBO, VAO;
@@ -118,8 +139,15 @@ int main(void)
 	glBindVertexArray(VAO);
 	// 
 	glBindBuffer(GL_ARRAY_BUFFER, VBO);
-	glBufferData(GL_ARRAY_BUFFER, vertices.size() * sizeof(float), &vertices[0], GL_STATIC_DRAW);
-	//glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), &vertices[0], GL_STATIC_DRAW);
+	if (objLoaded) {
+		// set up array buffer pointers based on vertices loaded from obj
+		glBufferData(GL_ARRAY_BUFFER, vertices.size() * sizeof(float), &vertices[0], GL_STATIC_DRAW);
+	}
+	else
+	{
+		// set up array buffer pointers based on debug vertices
+		glBufferData(GL_ARRAY_BUFFER, sizeof(verticesDebug), verticesDebug, GL_STATIC_DRAW);
+	}
 	// set up vertex attribute pointers
 	// position attribute
 	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(float), (void*)0);

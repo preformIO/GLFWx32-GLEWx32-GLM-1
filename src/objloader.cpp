@@ -44,6 +44,7 @@ bool lOBJ::loadOBJ(
     else
     {
         printf("The file '%s' was not opened\n", path);
+        return false;
     }
 
     // read file until end
@@ -124,6 +125,6 @@ bool lOBJ::loadOBJ(
         out_normals.push_back(normal);
     }
 
-    return false;
+    return true;
 }
 
