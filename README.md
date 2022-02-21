@@ -1,5 +1,7 @@
 # GLFWx32-GLEWx32-GLM-1
 
+![Screenshot](https://drive.google.com/file/d/1udBvl0rjgiulQYgyS0as-NNNmWbPc967/view?usp=sharing)
+
 Basic example OpenGL application for Visual Studio 2022 that loads an OBJ file from pathOBJ and displays it using shaders specified by pathVShader and pathFshader using perspective projection and slow model rotation.
 
 User can press escape to quit the appliction, and re-sizing the window resizes the perspective projection so it diplays without distortion regardless of window size.
