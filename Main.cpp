@@ -44,9 +44,10 @@ const char* pathOBJ = "data/objs/cube_tris.obj"; // ? relative to final applicat
 
 
 /// <summary>
-///		Basic OpenGL application that loads an OBJ file from pathOBJ
-///		and displays it using shaders specified by pathVShader 
-///		and pathFshader using perspective projection and slow model rotation.
+///		Basic example OpenGL application for Visual Studio 2022 that 
+///		loads an OBJ file from pathOBJ and displays it using shaders 
+///		specified by pathVShader and pathFshader using perspective 
+///		projection and slow model rotation.
 /// 
 ///		User can press escape to quit the appliction, and re-sizing the window
 ///		resizes the perspective projection so it diplays without distortion
@@ -62,6 +63,8 @@ const char* pathOBJ = "data/objs/cube_tris.obj"; // ? relative to final applicat
 ///			https://learnopengl.com/Getting-started/Coordinate-Systems
 ///			- implemented simple OBJ loader
 ///			http://www.opengl-tutorial.org/beginners-tutorials/tutorial-7-model-loading/
+///			- OBJ data
+///			https://www.dropbox.com/s/kb2xjpofsquff4k/data.tgz?dl=0
 ///		2022.02.19 00:25
 ///			- integrated Shader class
 ///			https://learnopengl.com/code_viewer_gh.php?code=includes/learnopengl/shader.h
