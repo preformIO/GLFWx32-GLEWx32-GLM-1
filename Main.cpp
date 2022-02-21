@@ -164,8 +164,10 @@ int main(void)
 	glBindVertexArray(0);
 	
 	// Render settings
-	// uncomment this call to draw in wireframe polygons.
+	// uncomment these two calls to draw in wireframe polygons.
 	glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
+	glLineWidth(2.0f);
+	glEnable(GL_LINE_SMOOTH);
 	// uncomment this call for front-face rendering
 	//glPolygonMode(GL_FRONT, GL_FILL);
 	// uncomment this call for inverted normals rendering
@@ -200,7 +202,7 @@ int main(void)
 		mat4 projection = mat4(1.0f);
 		// manipulate transformations
 		float seconds= glfwGetTime();
-		model = rotate(model, radians(30.0f * seconds), vec3(0.0f, 1.0f, 0.0f));
+		model = rotate(model, radians(15.0f * seconds), vec3(0.0f, 1.0f, 0.0f));
 		view = translate(view, vec3(0.0f, 0.0f, -3.0f));
 		view = rotate(view, radians(30.0f), vec3(1.0f, 0.0f, 0.0f));
 		view = rotate(view, radians(45.0f), vec3(0.0f, 1.0f, 0.0f));
