@@ -4,6 +4,14 @@ Basic example OpenGL application for Visual Studio 2022 that loads an OBJ file f
 
 User can press escape to quit the appliction, and re-sizing the window resizes the perspective projection so it diplays without distortion regardless of window size.
 
+## dependencies
+
+In order to compile, this application assumes assumes:
+ 1. you have `GLFW`, `GLEW`, and `GLM` installed at `C:GL`
+ 2. you copied `glew32.dll` to the same directory as `main.cpp`. 
+ 
+If you'd like to install those from scratch, follow the [`Downloading GLFWx32, GLEWx32, and GLM` instructions from the project setup reference](https://www.wikihow.com/Set-Up-OpenGL-GLFW-GLEW-GLM-on-a-Project-with-Visual-Studio), and copy `glew32.dll` from `C:\GL\GLEW\bin\Release\Win32` to your project folder (the same directory as `main.cpp`).
+
 ## author
 
 david aloka <d@preform.io>, copyright 2022
