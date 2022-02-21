@@ -10,7 +10,7 @@ david aloka <d@preform.io>, copyright 2022
 
 ## history
 
-### ### 2022.02.19 12:50
+### 2022.02.19 12:50
  * implemented perspective projection camera including model, view, and projection transformations
 	https://learnopengl.com/Getting-started/Coordinate-Systems
  * implemented simple OBJ loader
